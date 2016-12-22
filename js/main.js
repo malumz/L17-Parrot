@@ -1,44 +1,48 @@
-var aSmile = document.getElementById("aSmile");
-var bSmile = document.getElementById("bSmile");
+var hora = document.getElementById("hora");
+var Talking = document.getElementById("Talking");
 var pSalida = document.getElementById("salida");
 
 
 
 function calcular() {
-    var valaSmile = aSmile.value;
-    var valbSmile = bSmile.value;
+    var valhora = hora.value;
+    var valTalking = Talking.value;
 
-    var isaSmile = true;
-    var isbSmile = false;
+    var ishora = true;
+    var isTalking = false;
 
 
-    if (valaSmile == "" || valbSmile == "") {
-        aSmile.placeholder="Rellenar el campo!";
-        aSmile.style.backgroundColor = "rgba(247, 118, 23, 0.2)";
-        bSmile.placeholder="Rellenar el campo!";
-        bSmile.style.backgroundColor = "rgba(247, 118, 23, 0.2)";
+    if (valhora == "" || valTalking == "") {
+        hora.placeholder="Rellenar el campo!";
+        hora.style.backgroundColor = "rgba(247, 118, 23, 0.2)";
+        Talking.placeholder="Rellenar el campo!";
+        Talking.style.backgroundColor = "rgba(247, 118, 23, 0.2)";
     } else {
-        bSmile.style.backgroundColor = "#fff";
-        aSmile.style.backgroundColor = "#fff";
+        Talking.style.backgroundColor = "#fff";
+        hora.style.backgroundColor = "#fff";
 
-      if (valaSmile == "1" && valbSmile == "2") {
-            pSalida.innerHTML = "0-No Estamos en Problemas";
+      if (valhora< 7 && valTalking == "1") {
+            pSalida.innerHTML = "1-Estamos en Problemas >.<";
         } 
         
-        else if (valaSmile == "1" && valbSmile == "1") {
+        else if (valhora>20 && valTalking == "1") {
             pSalida.innerHTML = "1-Estamos en problemas >.<";
         }
-        
-        else if (valaSmile == "2" && valbSmile == "1") {
-            pSalida.innerHTML = "0-No Estamos en Problemas";
+
+        else if (valhora<20 && valTalking == "2") {
+            pSalida.innerHTML = "0-Yay! No estamos en problemas!.";
         }
-        
-        else if (valaSmile == "2" && valbSmile == "2") {
-            pSalida.innerHTML = "1-Estamos en problemas >.<";
+
+         else if (valhora>20 && valTalking == "2") {
+            pSalida.innerHTML = "0-Yay! No estamos en problemas!.";
+        }
+
+         else if (valhora<20 && valTalking == "1") {
+            pSalida.innerHTML = "0-Yay! No estamos en problemas!.";
         }
         
         else {
-            pSalida.innerHTML = "Escribe 'si' o 'no'";
+            pSalida.innerHTML = "Escribe la hora y elige una opcion";
         }
     }
 }
